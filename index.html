@@ -1282,13 +1282,21 @@ function loadQuestion() {
   // Reset feedback
   const fb = document.getElementById('feedback');
   const exp = document.getElementById('explanation');
+
+  // Feedback элементін бастапқы күйге қайтару
   fb.className = 'feedback';
+  fb.innerHTML = `
+    <span class="fb-icon" id="fb-icon"></span>
+    <span id="fb-text"></span>
+  `;
+
+  // Түсіндірмені тазалау
   exp.className = 'explanation';
-  fb.textContent = '';
   exp.textContent = '';
 
+  // "Келесі сұрақ" батырмасын жасыру
   const nextBtn = document.getElementById('nextBtn');
-  nextBtn.className = 'nextBtn';
+  nextBtn.className = '';
   nextBtn.textContent = current < shuffled.length - 1 ? 'Келесі сұрақ →' : '📊 Нәтижені көру';
 
   // Animate card
